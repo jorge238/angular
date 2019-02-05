@@ -13,13 +13,13 @@
         <div class="col">
             <h1>ngf</h1>
             <hr>
-            <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div *ngIf="ver" class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Warning card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">{{titulo.autor}} </h5>
+                    <p class="card-text">{{titulo.mensaje}} </p>
                 </div>
             </div>
-            <button class="btn btn-outline-primary btn-block">
+            <button (click)="ver=!ver" class="btn btn-outlineprimary btn-block">
                   mostrar/ocultar
               </button>
         </div>
@@ -27,11 +27,8 @@
             <h1>ngfor</h1>
             <hr>
             <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li *ngFor="let personaje of personajes" class="list-group-item"> {{personaje}}</li>
+
             </ul>
 
         </div>
